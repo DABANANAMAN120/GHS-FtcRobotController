@@ -15,7 +15,6 @@ To locate these samples, find the FtcRobotController module in the "Project/Andr
 
 Expand the following tree elements:
  FtcRobotController/java/org.firstinspires.ftc.robotcontroller/external/samples
-
 ### Naming of Samples
 
 To gain a better understanding of how the samples are organized, and how to interpret the
