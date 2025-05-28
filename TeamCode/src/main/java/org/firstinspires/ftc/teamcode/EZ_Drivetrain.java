@@ -23,8 +23,10 @@ public class EZ_Drivetrain extends BlocksOpModeCompanion {
     public static void EZMecanum_Robot_Centric(boolean dash){
         Motor backLeft = new Motor(hardwareMap, "backLeft");
         Motor backRight = new Motor(hardwareMap, "backRight");
+        backRight.setInverted(true);
         Motor frontLeft = new Motor(hardwareMap, "frontLeft");
         Motor frontRight = new Motor(hardwareMap, "frontRight");
+        frontRight.setInverted(true);
         MecanumDrive mecanum = new MecanumDrive(frontLeft, frontRight, backLeft, backRight);
         if (dash){
             mecanum.driveRobotCentric(gamepad1.left_stick_y, gamepad1.right_stick_x, gamepad1.left_stick_x);
