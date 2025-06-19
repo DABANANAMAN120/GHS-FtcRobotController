@@ -12,7 +12,7 @@ public class RoadRunner extends LinearOpMode {
     Notes:
     Do not program sharp turns. either split it into 2 trajectories, or use a spline
     Coordinate system is in inches, 72x72, (0,0) is the center of the field
-    If running trajectory with robot moving backwards is desired, add boolean true new Pose2d() at location specified in code
+    If running trajectory with robot moving backwards is desired, add change "Pose2d()" to "Pose2d(), true" at location specified in code
     If running trajectory at angle is desired, add Math.toRadians() function as 2nd param at location specified in code
     Vector 2d is a simple point on the field, but pose adds a 3rd param, the heading (in radians)
     When calculating headings, higher angle will move counter clockwise

@@ -18,14 +18,14 @@ public class EZ_Drivetrain extends BlocksOpModeCompanion {
 
 
     @ExportToBlocks(
-            parameterLabels = "Using Dashboard?"
+            parameterLabels = "Using Dashboard?,Back Left,Back Right,Front Left,Front Right"
     )
-    public static void EZMecanum_Robot_Centric(boolean dash){
-        Motor backLeft = new Motor(hardwareMap, "backLeft");
-        Motor backRight = new Motor(hardwareMap, "backRight");
+    public static void EZMecanum_Robot_Centric(boolean dash, String bL, String bR, String fL, String fR){
+        Motor backLeft = new Motor(hardwareMap, bL);
+        Motor backRight = new Motor(hardwareMap, bR);
         backRight.setInverted(true);
-        Motor frontLeft = new Motor(hardwareMap, "frontLeft");
-        Motor frontRight = new Motor(hardwareMap, "frontRight");
+        Motor frontLeft = new Motor(hardwareMap, fL);
+        Motor frontRight = new Motor(hardwareMap, fR);
         frontRight.setInverted(true);
         MecanumDrive mecanum = new MecanumDrive(frontLeft, frontRight, backLeft, backRight);
         if (dash){
@@ -35,13 +35,15 @@ public class EZ_Drivetrain extends BlocksOpModeCompanion {
         }
     }
     @ExportToBlocks(
-            parameterLabels = "Using Dashboard?"
+            parameterLabels = "Using Dashboard?,Back Left,Back Right,Front Left,Front Right"
     )
-    public static void EZMecanum_Field_Centric(boolean dash){
-        Motor backLeft = new Motor(hardwareMap, "backLeft");
-        Motor backRight = new Motor(hardwareMap, "backRight");
-        Motor frontLeft = new Motor(hardwareMap, "frontLeft");
-        Motor frontRight = new Motor(hardwareMap, "frontRight");
+    public static void EZMecanum_Field_Centric(boolean dash, String bL, String bR, String fL, String fR){
+        Motor backLeft = new Motor(hardwareMap, bL);
+        Motor backRight = new Motor(hardwareMap, bR);
+        backRight.setInverted(true);
+        Motor frontLeft = new Motor(hardwareMap, fL);
+        Motor frontRight = new Motor(hardwareMap, fR);
+        frontRight.setInverted(true);
         SampleMecanumDrive drive = new SampleMecanumDrive(hardwareMap);
         double heading = Math.toDegrees(drive.getExternalHeading());
         MecanumDrive mecanum = new MecanumDrive(frontLeft, frontRight, backLeft, backRight);

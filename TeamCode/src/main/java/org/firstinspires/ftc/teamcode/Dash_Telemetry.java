@@ -8,6 +8,8 @@ import org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion;
 import org.firstinspires.ftc.robotcore.external.ExportToBlocks;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
+import kotlin._Assertions;
+
 public class Dash_Telemetry extends BlocksOpModeCompanion {
     static TelemetryPacket packet = new TelemetryPacket();
     static FtcDashboard dashboard = FtcDashboard.getInstance();
@@ -20,7 +22,12 @@ public class Dash_Telemetry extends BlocksOpModeCompanion {
     }
 
     @ExportToBlocks()
-    public static void Add_Data (String Label, Object Data){
+    public static void Add_Number (String Label, Number Data){
+        packet.put(Label, Data);
+    }
+
+    @ExportToBlocks()
+    public static void Add_Text(String Label, String Data){
         packet.put(Label, Data);
     }
 
